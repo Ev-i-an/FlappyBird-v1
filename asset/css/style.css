@@ -1,0 +1,119 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.background {
+	height: 100vh;
+	width: 100vw;
+	background: url("../img/4622688.png") no-repeat center center fixed;
+    /*permet de controler la taille de l'arrière plan selon le navigateur web utilisé (Opéra, Firefox, etc..), cover est là pour s'assurer que les les dimensions de l'image s'adaptent aux différents navigateurs*/
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/* La dimension du bird definit la taille de la hitbox*/
+.bird {
+	height: 50px;
+	width: 65px;
+	position: fixed;
+	top: 40vh;  
+	left: 30vw;
+	z-index: 100;
+}
+.pipe_sprite {
+	position: fixed;
+	top: 40vh;
+	left: 100vw;
+	height: 70vh;
+	width: 6vw;
+	background:radial-gradient(rgb(206, 159, 19) 50%, rgb(29, 28, 28));
+	border: 2px solid rgba(202, 154, 21, 0.699);
+    border-radius: 40% 40% 40% 40%;
+}
+.message {
+	position: absolute;
+	z-index: 10;
+	color: black;
+	top: 30%;
+	left: 50%;
+	font-size: 4em;  /*Control la taille d'un texte a l'interieur d'un élément*/
+	transform: translate(-50%, -50%);  /*permet de centrer cet élément à l'intérieur de son contenant, tout comme ajuster la taille du message et le positionner au centre de la boîte*/
+	text-align: center;
+}
+/*correspond au message au début du jeu et lorsque l'on perd*/
+.messageStyle{    
+	background: rgba(189, 135, 18, 0.242);
+	padding: 30px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 45%;
+    border: 3px double black;
+}
+.score {
+	position: fixed;
+	z-index: 10;
+	height: 10vh;
+	font-size: 10vh;
+	font-weight: 100;
+	color: rgb(255, 255, 255);
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.score_val {
+	color: gold;
+	font-weight: lighter; /*Permet de réguler l'épaisseur du txt: bolde, bolder, lighter*/
+}
+@media only screen and (max-width: 1080px) {
+    .message{
+		font-size: 50px;
+		top: 50%;
+		white-space: nowrap;
+	}
+	.score{
+		font-size: 8vh;
+	}
+	.bird{
+		width: 120px;
+		height: 90px;
+	}
+	.pipe_sprite{
+		width: 14vw;
+	}
+}
+@media only screen and (max-width: 550px) {
+    .message{
+		font-size: 50px;
+		top: 50%;
+		white-space: nowrap;
+	}
+	.score{
+		font-size: 8vh;
+	}
+	.bird{
+		width: 10vw;
+		height: 8vh;
+	}
+	.pipe_sprite{
+		width: 14vw;
+	}
+    .message {
+        position: absolute;
+        z-index: 10;
+        height: 50vh;
+        width: 60vw;
+        color: black;
+        top: 30%;
+        left: 50%;
+        font-size: 4em;  /*Control la taille d'un texte a l'interieur d'un élément*/
+        transform: translate(-50%, -50%);  /*permet de centrer cet élément à l'intérieur de son contenant, tout comme ajuster la taille du message et le positionner au centre de la boîte*/
+        text-align: center;
+        text-wrap: wrap;
+        font-size: 2.3rem;
+    }
+}
